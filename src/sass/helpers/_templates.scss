@@ -1,0 +1,101 @@
+//Custom Webkit Scroll
+@mixin c-scroll {
+	@include scroll;
+	@include scrollbar {width: 5px;}
+	@include scrollbar-track {width: 5px;}
+	@include scrollbar-thumb {background-color: $color-accent; border-radius: 100px;}
+}
+
+//Custom Webkit Scroll
+@mixin c-scroll--light {
+	@include scroll;
+	@include scrollbar {width: 5px;}
+	@include scrollbar-track {width: 5px;}
+	@include scrollbar-thumb {background-color: $color-accent; border-radius: 100px;}
+}
+
+@mixin container{
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	@include max-screen(1200){
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+@mixin flex{
+	display: flex;
+	justify-content: space-between;
+}
+
+@mixin flexCenter{
+	display: flex;
+	align-items: center;
+}
+
+@mixin flexColumn{
+	display: flex;
+	flex-direction: column;
+}
+
+@mixin box{
+	background-color: #fff;
+	border-radius: $border-radius;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+@mixin overlay{
+	position: relative;
+	&::before{
+		display: block;
+		content: '';
+		background-color: rgba(#000, .45);
+		@include tr;
+		@include coverdiv;
+	}
+	& > * {
+		z-index: z(default);
+	}
+	.container{
+		position: relative;
+	}
+}
+
+%img {
+	display: block;
+	width: 100%;
+	margin: 0;
+}
+
+//style input
+%styleInput {
+	width: 100%;
+	padding: 10px 15px;
+	font-family: $f;
+	font-size: 16px;
+	line-height: 1;
+	color: $color-text;
+	border: 1px solid #d9d9d9;
+    border-radius: $border-radius;
+
+	outline: none;
+	appearance: none;
+	-webkit-appearance: none;
+	box-shadow: none;
+    background-color: transparent;
+
+	&:-webkit-autofill {
+		-webkit-box-shadow: 0 0 0 30px white inset;
+    }
+
+	&:focus{
+		border-color: #d9d9d9;
+	}
+
+	@include placeholder{
+		font-family: $f-light;
+		// font-size: 14px;
+		color: $color-placeholder;
+	}
+}

@@ -1,0 +1,111 @@
+<!-- begin example bootstrap modal -->
+<div class="modal fade modal-auth" id="modal-auth--registration">
+	<div class="modal-dialog modal-dialog--sm" role="document">
+		<div class="modal-content">
+			<button class="close modal__btn modal__btn--close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<div class="modal-header">
+				<h5 class="modal-title">Регистрация в FlyInsta</h5>
+			</div>
+			<div class="modal-body">
+
+				<div class="modal-auth__inner">
+					<div class="input js-input">
+						<span class="input__title">Имя</span>
+						<input type="text">
+					</div>
+					<div class="input js-input">
+						<span class="input__title">Логин (e-mail)</span>
+						<input type="text">
+					</div>
+					<div class="input js-input">
+						<span class="input__title">Пароль</span>
+						<input type="password">
+					</div>
+					<div class="input js-input">
+						<span class="input__title">Повторите пароль</span>
+						<input type="password">
+					</div>
+
+					<div class="capcha"></div>
+
+					<div class="modal-auth__policy mb-25">
+						{% include "partials/_policy.html" %}
+					</div>
+
+					{{ item.btn('Зарегистрироваться', 'modal-auth__btn') }}
+
+					<div class="modal-auth__footer">
+						Уже зарегистрированы? <a data-dismiss="modal" data-toggle="modal" href="#modal-auth--enter" aria-label="Close">Вход</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end example bootstrap modal -->
+
+<!-- begin example bootstrap modal -->
+<div class="modal fade modal-auth" id="modal-auth--enter">
+		<div class="modal-dialog modal-dialog--sm" role="document">
+			<div class="modal-content">
+				<button class="close modal__btn modal__btn--close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="modal-header"><h5 class="modal-title">Вход в FlyInsta</h5></div>
+				<div class="modal-body">
+
+					<div class="modal-auth__inner">
+						<div class="input js-input">
+							<span class="input__title">Имя</span>
+							<input type="text">
+						</div>
+						<div class="input js-input">
+							<span class="input__title">Логин (e-mail)</span>
+							<input type="text">
+						</div>
+						<div class="input js-input">
+							<span class="input__title">Пароль</span>
+							<input type="password">
+						</div>
+
+						{{ item.btn('Войти', 'modal-auth__btn') }}
+
+						<div class="modal-auth__footer">
+							Забыли пароль? <a data-dismiss="modal" data-toggle="modal" href="#modal-auth--recovery" aria-label="Close">Востановить</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end example bootstrap modal -->
+
+<!-- begin example bootstrap modal -->
+<div class="modal fade modal-auth" id="modal-auth--recovery">
+		<div class="modal-dialog modal-dialog--sm" role="document">
+			<div class="modal-content">
+				<button class="close modal__btn modal__btn--close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="modal-header">
+					<h5 class="modal-title">Сброс пароля</h5>
+				</div>
+				<div class="modal-body">
+
+					<div class="modal-auth__inner">
+						<div class="input js-input">
+							<span class="input__title">Логин (e-mail)</span>
+							<input type="text">
+						</div>
+
+						<div class="modal-auth__info mb-30">Введите ваш email, мы вышлем ссылку для восстановления пароля</div>
+
+						{{ item.btn('Сбросить пароль', 'modal-auth__btn') }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end example bootstrap modal -->

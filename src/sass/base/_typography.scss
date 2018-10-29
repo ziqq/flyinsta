@@ -1,0 +1,108 @@
+//Typography
+
+b, strong {
+	font-family: $f-bold;
+	font-weight: 600;
+}
+
+img{@extend %img;}
+
+// Стили  ссылок
+a {
+	color: $color-text;
+	text-decoration: none;
+	outline: none;
+    @include tr;
+
+	&:hover{
+        color: $color-accent;
+
+        &.underline {
+            border-color: #fff;
+        }
+    }
+
+    &.underline {
+        padding-bottom: 5px;
+        border-bottom: 1px solid #fff;
+    }
+}
+
+h1,.h1, h2,.h2, h3,.h3, h4,.h4, h5,.h5, h6,.h6 {
+    margin-top: 0;
+    text-align: center;
+    color: $gray--dark;
+}
+
+h1,.h1,h2,.h2{
+	font-family: $f2;
+	font-weight: 600;
+}
+
+h1,.h1, h2,.h2 {
+	font-size: 48px;
+    line-height: 54px;
+
+	@include respond-to(sm)  {
+		font-size: 22px;
+		line-height: 25px;
+	}
+}
+h3,.h3 {
+	font-family: $f-medium;
+	font-weight: 500;
+	font-size: 22px;
+    line-height: 1.25em;
+
+	@include max-screen(1024) {
+		font-size: 24px;
+    }
+
+	@include max-screen(768) {
+		font-size: 22px;
+		line-height: 1.13636364em;
+	}
+}
+h4,.h4,h5,.h5, h6,.h6{
+	font-family: $f;
+    font-weight: 400;
+    font-size: 19px;
+    margin-bottom: $base-indent;
+
+	@include max-screen(768) {
+		line-height: 1.11111111em;
+	}
+}
+h4,.h4{
+	font-size: 19px;
+	letter-spacing: 0.24px;
+	line-height: 1.22222222em;
+
+}
+h5,.h5, h6,.h6 {
+	font-size: 16px;
+	letter-spacing: 0.24px;
+}
+
+p{
+    font-size: 19px;
+    line-height: 22px;
+
+    @include respond-to(sm) {
+        font-size: 17px;
+        line-height: 20px;
+    }
+}
+
+.text {
+    font-size: 19px;
+    line-height: 22px;
+
+    &--small {
+        font-size: 17px;
+    }
+
+    &-accent {
+        color: $color-accent;
+    }
+}

@@ -1,0 +1,303 @@
+.btn {
+    display: inline-block;
+    min-width: 200px;
+    padding: 10px 45px;
+    font-family: $f;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 0.3px;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    background: linear-gradient(80.23deg, $color-main 1.74%, $color-third 100%);
+    box-shadow: 0 5px 10px rgba(196, 80, 146, 0.5);
+    border-radius: 20px 5px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: all 0.4s ease-in-out;
+    background-position: 0 -30px;
+
+    @include respond-to(xs) {
+        padding: 12px 45px;
+
+        &:not(.btn-icon) {
+            border-radius: $border-radius;
+        }
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 100%;
+        z-index: -1;
+        transition: opacity 0.45s;
+    }
+
+    &:hover {
+        color: #fff;
+
+        &::before {
+            opacity: 1;
+            background: linear-gradient(
+                80.23deg,
+                #aa56d8 1.74%,
+                $color-third 100%
+            );
+        }
+    }
+
+    &:focus,
+    &:active {
+
+        &::before {
+            opacity: 1;
+            background: linear-gradient(
+                81.02deg,
+                #aa56d8 1.74%,
+                $color-third 100%
+            );
+        }
+    }
+
+    &-outline {
+        color: $color-text;
+        border: 1px solid $color-accent;
+        background-color: transparent;
+        background-image: none;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $color-text;
+            background-color: transparent;
+            box-shadow: 0px 5px 10px rgba(196, 80, 146, 0.25);
+
+            &::before {
+                display: none;
+            }
+        }
+    }
+
+    &-white {
+        color: $color-accent;
+        background-color: #fff;
+        background-image: none;
+        box-shadow: none;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+
+        &:hover {
+            color: $color-accent;
+            background-color: #fff;
+            box-shadow: 0px 5px 10px rgba(196, 80, 146, 0.25);
+        }
+
+        &::before {
+            display: none;
+        }
+    }
+
+    &-icon {
+        min-width: auto;
+        width: 70px;
+        height: 70px;
+        padding: 0;
+        border-radius: 50%;
+        box-shadow: none;
+        background: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        @include respond-to(xs) {
+            padding: 0;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+
+            &::before {
+                background-image: none;
+            }
+        }
+
+        &:active {
+            box-shadow: none;
+        }
+
+        &::before {
+            height: auto;
+            width: auto;
+            opacity: 1;
+            background-image: none;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(#fff, 0.2);
+            opacity: 0;
+            @include centre();
+        }
+
+        &.is-clicked {
+
+            &::after {
+                animation: pulse 1.5s;
+            }
+        }
+
+        .icon {
+            width: 25px;
+            height: 25px;
+            margin: auto;
+            fill: $color-accent;
+            color: $color-accent;
+        }
+
+        &--user {
+            width: 50px;
+            height: 50px;
+
+            .icon {
+                fill: $color-accent;
+
+                @include respond-to(xs) {
+                    fill: #fff;
+                }
+            }
+        }
+
+        &--play {
+            width: 70px;
+            height: 70px;
+            border: 2px solid #fff;
+            box-shadow: 0 5px 10px rgba(196, 80, 146, 0.5);
+            background: linear-gradient(
+                80.23deg,
+                $color-main 1.74%,
+                $color-third 100%
+            );
+
+            @include respond-to(xs) {
+                width: 55px;
+                height: 55px;
+            }
+
+            &::before {
+                content: '\f04b';
+                @include fa('solid');
+                margin: auto 20px auto auto;
+                font-size: 20px;
+                color: #fff;
+                position: absolute;
+                top: 18px;
+                left: 27px;
+                z-index: 10;
+
+                @include respond-to(xs) {
+                    top: 10px;
+                    left: 20px;
+                }
+            }
+        }
+    }
+
+    &-link {
+        min-width: auto;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+        text-decoration: underline;
+        color: $color-main;
+
+        &::before {
+            display: none;
+        }
+
+        &:hover {
+            color: $color-main;
+            text-decoration: none;
+            background-image: none;
+
+            &::before {
+                display: none;
+            }
+        }
+    }
+} //.btn
+
+.go-top {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid $gray--light;
+    transition: right 0.35s ease-in-out;
+    position: fixed;
+    cursor: pointer;
+
+    bottom: 110px;
+    right: -300px;
+    z-index: z(fixed);
+    @include flexCenter;
+    justify-content: center;
+
+    @include respond-to(xs) {
+        display: none;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        height: 196px;
+        @include sprite('dashed');
+        @include centre;
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out 0.4s;
+    }
+
+    &.is-visible {
+        right: 70px;
+
+        &::before {
+            opacity: 1;
+        }
+    }
+
+    i {
+        font-size: 35px;
+        color: $gray--light;
+        height: 55px;
+        line-height: 55px;
+        background-color: #fff;
+        z-index: 1;
+    }
+}
+
+@keyframes pulse {
+
+    0% {
+        opacity: 1;
+        width: 70px;
+        height: 70px;
+    }
+
+    100% {
+        opacity: 0;
+        width: 150px;
+        height: 150px;
+    }
+}

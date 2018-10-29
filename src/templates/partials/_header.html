@@ -1,0 +1,44 @@
+<!-- begin header -->
+<header class="header">
+	<div class="container">
+		<div class="header__in">
+
+			<button class="hamburger js-hamburger sm-only"><span></span></button>
+
+			<div class="logo header__logo">
+				<a class="logo__link" href="/">
+					<picture>
+						<source media="(max-width: 480px)" srcset="img/general/logo--white.svg">
+						<img class="logo__img" src="img/general/logo.svg" alt="FlyInsta">
+					</picture>
+				</a>
+			</div>
+
+			<nav class="menu js-menu">
+				<ul class="menu__list js-scrollspy">
+					<li class="menu__item" data-topic="price">
+						<a class="menu__link js-goto" href="#price">Цены</a>
+					</li>
+					<li class="menu__item" data-topic="info">
+						<a class="menu__link js-goto" href="#info">Функции</a>
+					</li>
+					<li class="menu__item" data-topic="video">
+						<a class="menu__link js-goto" href="#video">О нас</a>
+					</li>
+					<li class="menu__item menu__item--social social xs-only">
+						<ul>
+							<li><a href="#" title="facebook"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="#" title="vk"><i class="fab fa-vk"></i></a></li>
+							<li><a href="#" title="instagram"><i class="fab fa-instagram"></i></a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+			<a class="btn btn-outline sm-hide" data-toggle="modal" href="#modal-auth--registration">Регистрация/Вход</a>
+			<a class="btn btn-icon btn-icon--user sm-only--flex" data-toggle="modal" href="#modal-auth--registration">
+				{{ mixin.icon('user') }}
+			</a>
+		</div>
+	</div>
+</header><!-- end header -->

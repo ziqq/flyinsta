@@ -1,0 +1,124 @@
+.img-container {
+    position: relative;
+
+    &__bg,
+    &__img {
+        @include centre;
+    }
+
+    &__bg {
+        min-width: 450px;
+
+        @include respond-to(sm) {
+            min-width: 330px;
+        }
+    } //.img-container__bg
+
+    &__img {
+        width: 260px;
+
+        @include respond-to(sm) {
+            min-width: 220px;
+        }
+    } //.img-container__img
+
+    &__link {
+        padding-left: 40px;
+        color: #fff;
+        font-family: $f-bold;
+        font-size: 20px;
+        position: absolute;
+        right: 85px;
+        bottom: -200px;
+
+        &::before {
+            content: '';
+            display: block;
+            @include sprite('mail');
+            @include centre('y');
+            left: 0;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            width: calc(100% - 40px);
+            height: 3px;
+            border-radius: 15px;
+            background-color: #fff;
+            position: absolute;
+            left: 40px;
+            bottom: -5px;
+        }
+    } //.img-container__link
+} //.img-container
+
+.box-icon-move {
+    position: relative;
+
+    @include respond-to(xs) {
+        display: none;
+    }
+
+    &__list {
+        width: 105%;
+        padding-top: 90%;
+        background: url('../img/general/hero/vector.svg') 0 95% no-repeat;
+        position: absolute;
+        top: -30px;
+        left: 35px;
+        z-index: -2;
+
+        @include respond-to(sm) {
+            padding-top: 100%;
+            background-position: 110% 40%;
+            background-size: contain;
+        }
+    } //.box-icon-move__list
+
+    &__way {
+        position: absolute;
+        top: -30px;
+        left: 0;
+        z-index: -2;
+
+        #motionPath {
+            opacity: 0;
+            visibility: hidden;
+        }
+    } //.box-icon-move__way
+
+    &__icon {
+        fill: #fff;
+        background-color: #fff;
+    //     display: inline-block;
+    //     width: 70px;
+    //     height: 70px;
+    //     position: absolute;
+    //     background-color: #fff;
+
+    //     &--like {
+    //         top: 4%;
+    //         left: 12px;
+
+    //         @include respond-to(sm) {
+    //             left: -25px;
+    //         }
+    //     }
+
+    //     &--comment {
+    //         top: 15%;
+    //         right: -40px;
+    //     }
+
+    //     &--user {
+    //         bottom: -4%;
+    //         left: 120px;
+
+    //         @include respond-to(sm) {
+    //             bottom: 0%;
+    //             left: 30px;
+    //         }
+    //     }
+    } //.box-icon-move__icon
+} //.box-icon-move

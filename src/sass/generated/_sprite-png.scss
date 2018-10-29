@@ -1,0 +1,74 @@
+$icons: (0:0);
+$icons: map-merge($icons,(angel-white--left: (X: -12px, Y:0px, W: 32px, H: 32px, TW: 44px, TH: 196px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(angel-white--right: (X: -12px, Y:-42px, W: 32px, H: 32px, TW: 44px, TH: 196px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(dashed: (X: 0px, Y:0px, W: 2px, H: 196px, TW: 44px, TH: 196px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(mail: (X: -12px, Y:-84px, W: 28px, H: 29px, TW: 44px, TH: 196px, IMG: '../img/icons.png')));
+
+
+// Gets an attribute from the sass map
+@function icon-attr($icon, $attr){
+	$icon: map-get($icons, $icon);
+	@return map-get($icon, $attr);
+}
+
+
+@mixin sprite($iconName){
+	background-image: url(icon-attr($iconName, IMG));
+	width: icon-attr($iconName, W);
+	height: icon-attr($iconName, H);
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y);
+}
+
+@mixin sprite-position($iconName){
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y);
+}
+@mixin sprite-retina($iconName){
+	background-image: url(icon-attr($iconName, IMG));
+	$width: icon-attr($iconName, W);
+	$height: icon-attr($iconName, H);
+	width: $width/2;
+	height: $height/2;
+	$x: icon-attr($iconName, X);
+	$y: icon-attr($iconName, Y);
+	background-position: $x/2 $y/2;
+	$tw: icon-attr($iconName, TW);
+	$th: icon-attr($iconName, TH);
+	background-size: $tw/2 $th/2;
+}
+
+
+
+@mixin s($i){
+	@include sprite($i);
+}
+@mixin sp($i){
+	@include sprite-position($i);
+}
+@mixin sr($i){
+	@include sprite-retina($i);
+}
+
+.ico-angel-white--left{
+width: 32px;
+height: 32px;
+background-image: url('../img/icons.png');
+background-position: -12px 0px;
+}
+.ico-angel-white--right{
+width: 32px;
+height: 32px;
+background-image: url('../img/icons.png');
+background-position: -12px -42px;
+}
+.ico-dashed{
+width: 2px;
+height: 196px;
+background-image: url('../img/icons.png');
+background-position: 0px 0px;
+}
+.ico-mail{
+width: 28px;
+height: 29px;
+background-image: url('../img/icons.png');
+background-position: -12px -84px;
+}

@@ -1,0 +1,180 @@
+.modal-open .modal {
+    padding-right: 0 !important;
+}
+
+.modal {
+
+    &-dialog {
+        @include respond-to(xs) {
+            margin: 50px 10px 0;
+        }
+
+        &--lg,
+        &--md,
+        &--sm {
+            @include respond-to(sm) {
+                margin: $base-indent auto;
+            }
+        }
+
+        &--lg {
+            max-width: 960px;
+            margin: $base-indent auto;
+        } //.modal-dialog--lg
+
+        &--md {
+            max-width: 768px;
+            margin: $base-indent auto;
+        } //.modal-dialog--md
+
+        &--sm {
+            max-width: 425px;
+            margin: $base-indent auto;
+        } //.modal-dialog--sm
+    }
+
+    &-header {
+        padding: 20px 40px;
+        overflow: hidden;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            background-image: url('../img/general/bg/modal-bg--header.png');
+            @include cover;
+            position: absolute;
+            top: -65px;
+            left: 0;
+            width: 100%;
+            height: 155px;
+        }
+
+        .modal__btn--close {
+            top: 8px;
+            right: 5px;
+        }
+    }
+
+    &-title {
+        display: block;
+        width: 100%;
+        margin: auto 0;
+        font-family: $f-medium;
+        font-weight: 500;
+        font-size: 18px;
+        letter-spacing: 0;
+        text-transform: initial;
+        line-height: 1;
+    }
+
+    &__btn {
+        min-width: auto;
+        height: 32px;
+        line-height: 31px;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+
+        &--close {
+            height: auto;
+            line-height: auto;
+            padding: 5px 10px;
+            font-size: 21px;
+            font-weight: 700;
+            line-height: 1;
+            color: #000;
+            text-shadow: 0 1px 0 #fff;
+            background-color: transparent;
+            opacity: 0.3;
+            position: absolute;
+            top: 3px;
+            right: 5px;
+            z-index: z(default);
+
+            &:hover {
+                text-decoration: none;
+                opacity: 0.75;
+            }
+
+            &:not(:disabled):not(.disabled) {
+                cursor: pointer;
+            }
+        }
+
+        &--cancel {
+            padding: 0 15px;
+        }
+
+        &--confirm {
+            padding: 0 15px;
+        }
+    }
+} //.modal
+
+.modal-auth {
+
+    &__btn {
+        display: block;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__recovery {
+        display: block;
+        font-family: $f-light;
+        font-size: 16px;
+        color: #567486;
+
+        &:hover {
+            color: #567486;
+        }
+    }
+
+    &__footer {
+        padding: 13px 40px;
+        text-align: center;
+        font-family: $f-medium;
+        font-size: 14px;
+        letter-spacing: 1px;
+        border-radius: $border-radius;
+        background-color: rgba(#fff, .85);
+        box-shadow: $modal-box-shadow;
+        position: absolute;
+        bottom: -80px;
+        left: 0;
+        width: 100%;
+
+        a {
+            color: $color-accent;
+        }
+    }
+
+    &__info {
+        font-family: $f-light;
+        font-size: 16px;
+        color: #567486;
+    }
+
+    .modal {
+
+        &-header {
+            border-bottom: 0;
+            text-align: center;
+        }
+
+        &-body {
+            padding: 20px 40px 35px;
+        }
+
+        &-content {
+        }
+
+        &-title {
+            margin-top: 80px;
+            font-family: $f-medium;
+            font-size: 18px;
+        }
+    }
+}

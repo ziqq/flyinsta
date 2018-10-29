@@ -1,0 +1,140 @@
+.tab {
+
+    &__inner {
+        padding: 60px $gutter 20px;
+        position: relative;
+        @include flexCenter;
+
+        @include respond-to(xs) {
+            padding: 20px 0;
+        }
+    } //.tab__inner
+
+    &__left,
+    &__right {
+        width: 50%;
+
+        @include respond-to(xs) {
+            width: 100%;
+        }
+    } //.tab__left
+
+    &__titles {
+        max-width: 690px;
+        margin: auto;
+        border-bottom: 3px solid #e8e8e8;
+        position: relative;
+        @include flexCenter;
+        justify-content: space-between;
+
+        @include respond-to(xs) {
+            border-bottom: 0;
+        }
+
+        &--scroll {
+            overflow-x: auto;
+        }
+    } //.tab__titles
+
+    &__title {
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+        white-space: nowrap;
+        outline: none;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &.is-active {
+            @include respond-min(xs) {
+
+                .tab {
+
+                    &__link {
+                        color: $color-accent;
+                    }
+
+                    &__icon {
+                        color: $color-accent;
+                    }
+                }
+            }
+        }
+    } //.tab__title
+
+    &__btn {
+        display: inline-flex;
+        padding: 3px 10px;
+        background-color: transparent;
+        border: 0;
+        outline: none;
+        @include centre('y');
+        top: 18px;
+
+        i {
+            margin: auto;
+            font-size: 32px;
+        }
+
+        &--prev {
+            left: 10px;
+        }
+
+        &--next {
+            right: 10px;
+        }
+    } //.tab__btn
+
+    &__link {
+        display: block;
+        padding: 5px 15px 6px;
+        border-bottom: 2px solid transparent;
+        transition: none;
+        cursor: pointer;
+        outline: none;
+        @include nosel;
+        color: $color-text;
+
+        &:hover {
+            color: $color-text;
+        }
+
+        @include respond-to(xs) {
+            padding: 5px 0 6px;
+            border-bottom: 0;
+        }
+    } //.tab__link
+
+    &__icon {
+        margin-right: 7px;
+        color: $color-accent;
+        font-size: 14px;
+    } //.tab__icon
+
+    &__content {
+        display: none;
+        padding: 15px 30px;
+
+        @include respond-to(xs) {
+            padding: 10px 0;
+        }
+    } //.tab__content
+} //.tab
+
+.line {
+    display: block;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    height: 6px;
+    background: $color-accent;
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px rgba(196, 80, 146, 0.5);
+    transition: all 0.5s;
+}
