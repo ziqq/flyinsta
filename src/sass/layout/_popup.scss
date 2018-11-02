@@ -6,7 +6,7 @@
 
     &-dialog {
         @include respond-to(xs) {
-            margin: 50px 10px 0;
+            margin: 10px 10px 0;
         }
 
         &--lg,
@@ -37,18 +37,6 @@
         padding: 20px 40px;
         overflow: hidden;
         position: relative;
-
-        &::before {
-            content: '';
-            display: block;
-            background-image: url('../img/general/bg/modal-bg--header.png');
-            @include cover;
-            position: absolute;
-            top: -65px;
-            left: 0;
-            width: 100%;
-            height: 155px;
-        }
 
         .modal__btn--close {
             top: 8px;
@@ -132,19 +120,20 @@
         }
     }
 
-    &__footer {
-        padding: 13px 40px;
+    &__variant {
+        // padding: 13px 40px;
+        margin-top: 20px;
         text-align: center;
         font-family: $f-medium;
         font-size: 14px;
         letter-spacing: 1px;
-        border-radius: $border-radius;
-        background-color: rgba(#fff, .85);
-        box-shadow: $modal-box-shadow;
-        position: absolute;
-        bottom: -80px;
-        left: 0;
-        width: 100%;
+        // border-radius: $border-radius;
+        // background-color: rgba(#fff, .85);
+        // box-shadow: $modal-box-shadow;
+        // position: absolute;
+        // bottom: -80px;
+        // left: 0;
+        // width: 100%;
 
         a {
             color: $color-accent;
@@ -162,19 +151,36 @@
         &-header {
             border-bottom: 0;
             text-align: center;
+
+            &::before {
+                content: '';
+                display: block;
+                background-image: url('../img/general/bg/modal-bg--header.png');
+                @include cover;
+                position: absolute;
+                top: -1px;
+                left: 0;
+                width: 100%;
+                height: 103px;
+            }
         }
 
         &-body {
             padding: 20px 40px 35px;
-        }
 
-        &-content {
+            @include respond-to(xs) {
+                padding: 20px;
+            }
         }
 
         &-title {
-            margin-top: 80px;
+            margin-top: 50px;
             font-family: $f-medium;
             font-size: 18px;
+
+            @include respond-to(xs) {
+                margin-top: 40px;
+            }
         }
     }
 }

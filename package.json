@@ -8,7 +8,7 @@
         "start": "gulp",
         "precommit": "lint-staged",
         "eslint": "eslint --ignore-pattern 'src/js/dev/ src/js/assets/' --cache --format=node_modules/eslint-formatter-pretty src/js/",
-        "eslint-fix": "npm run eslint -- --fix",
+        "eslint-fix": "npm run eslint -- --fix"
     },
     "lint-staged": {
         "src/templates/**/*.html": [
@@ -77,7 +77,7 @@
         "require-yaml": "^0.0.1",
         "run-sequence": "^2.2.1",
         "sass-lint": "^1.12.1",
-        "stylelint": "^9.2.0",
+        "stylelint": "^9.7.1",
         "stylelint-selector-bem-pattern": "^2.0.0",
         "through2": "^2.0.1",
         "vinyl-buffer": "^1.0.0",

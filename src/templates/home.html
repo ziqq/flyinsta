@@ -18,29 +18,22 @@ title: Главная
 							<span class="title__text">Сервис раскрутки инстаграм для девушек</span>
 						</h2>
 						<p class="desc hero__desc">Стань популярнее уже сегодня, получи живых подписчиков с помощью инстаграм бота и других функций сервиса</p>
-						<button class="btn hero__btn">Попробовать бесплатно</button>
-						<a href="#" class="info-text xs-hide">
-							<i class="fas fa-play info-text__icon"></i>
-							смотреть видео
-						</a>
+						<div class="button-box">
+							<button class="btn hero__btn">Попробовать бесплатно</button>
+							<a href="https://www.youtube.com/watch?v=CktQeSxSGO8" class="info-text xs-hide">
+								<i class="fas fa-play info-text__icon"></i>
+								смотреть видео
+							</a>
+						</div>
 					</div>
 					<div class="hero__right">
 						<div class="img-container">
 							<div class="img-container__bg">
 								<img src="img/general/hero/img-bg.svg" alt="bg">
 							</div>
+							<div class="img-container__bg--two"></div>
 							<div class="box-icon-move">
-								<ul class="box-icon-move__list">
-									<!-- <li class="box-icon-move__item box-icon-move__item--like">
-										{{ mixin.icon('like', 'box-icon-move__icon box-icon-move__icon--like') }}
-									</li>
-									<li class="box-icon-move__item box-icon-move__item--comment">
-										{{ mixin.icon('comment', 'box-icon-move__icon box-icon-move__icon--comment') }}
-									</li>
-									<li class="box-icon-move__item box-icon-move__item--user">
-										{{ mixin.icon('user', 'box-icon-move__icon box-icon-move__icon--user') }}
-									</li> -->
-								</ul>
+								<div class="box-icon-move__map"></div>
 								<div class="box-icon-move__way">
 									<svg class="box-icon-move__svg" width="670" height="600" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path id="motionPath" fill="#fff" d="M98.864 493.911C-7.26 392.591-6.76 150.339 6.756 41.877c271.52-85.3 508.099-24.028 578.682 51.561-52.562 176.709-413.487 470.249-486.574 400.473z" stroke="#D1CECE" stroke-linecap="round" stroke-dasharray="5 10"/>
@@ -64,7 +57,7 @@ title: Главная
 											<animateMotion
 												xlink:href="#one"
 												dur="1.8s"
-												begin="2s"
+												begin="1.7s"
 												fill="freeze"
 												repeatCount="1"
 												values="50;500;300;400;50"
@@ -78,20 +71,19 @@ title: Главная
 											<animateMotion
 												xlink:href="#two"
 												dur="1.8s"
-												begin="2s"
+												begin="1.7s"
 												fill="freeze"
 												repeatCount="1"
 												calcMode="linear"
 												keyPoints="1;0.62"
-												keyTimes="0;1"
-												keySplines="0.42 0 1 1;.42 0 1 1;">
+												keyTimes="0;1">
 											<mpath xlink:href="#motionPath" />
 											</animateMotion>
 
 											<animateMotion
 												xlink:href="#three"
 												dur="1.8s"
-												begin="2s"
+												begin="1.7s"
 												fill="freeze"
 												repeatCount="1"
 												calcMode="linear"
@@ -111,8 +103,7 @@ title: Главная
 											<source media="(max-width: 480px)" srcset="img/general/hero/slider/mobile/1.jpg">
 											<img src="img/general/hero/slider/desktop/1.png" alt="julia_porsche">
 										</picture>
-										<a href="#" class="hero__link">julia_porsche</a>
-										<a class="btn btn-icon btn-icon--play js-btn-pulse hero__play" href="https://www.youtube.com/watch?v=CktQeSxSGO8" data-fancybox></a>
+										<a href="https://www.instagram.com/julia_porsche/?hl=ru" class="hero__link">julia_porsche</a>
 									</div>
 									<!-- <div class="slider__slide hero__slide" data-video="https://www.youtube.com/watch?v=CktQeSxSGO8">
 										<picture>
@@ -123,6 +114,7 @@ title: Главная
 										<a class="btn btn-icon btn-icon--play js-btn-pulse hero__play" href="https://www.youtube.com/watch?v=CktQeSxSGO8" data-fancybox></a>
 									</div> -->
 								</div>
+								<a class="btn btn-icon btn-icon--play js-btn-pulse hero__play" href="https://www.youtube.com/watch?v=CktQeSxSGO8" data-fancybox></a>
 							</div>
 						</div>
 					</div>
@@ -141,14 +133,14 @@ title: Главная
 							<path d="M87.369 212.129L87.9041 212.974C88.2989 212.724 88.4679 212.234 88.311 211.793L87.369 212.129ZM76.245 180.92L77.187 180.584C77.0803 180.285 76.8376 180.054 76.5333 179.962C76.229 179.871 75.8992 179.929 75.645 180.12L76.245 180.92ZM37.311 1.69999H38.311C38.311 1.1477 37.8633 0.699986 37.311 0.699986V1.69999ZM1.467 1.69999V0.699986C0.914715 0.699986 0.467001 1.1477 0.467001 1.69999H1.467ZM0.467001 164.234C0.467001 185.404 5.83848 199.914 15.011 209.127C24.1837 218.339 36.995 222.09 51.525 222.09V220.09C37.318 220.09 25.1003 216.425 16.4283 207.715C7.75602 199.006 2.467 185.088 2.467 164.234H0.467001ZM51.525 222.09C65.562 222.09 78.4315 218.973 87.9041 212.974L86.834 211.284C77.7665 217.027 65.298 220.09 51.525 220.09V222.09ZM88.311 211.793L77.187 180.584L75.303 181.256L86.4271 212.465L88.311 211.793ZM75.645 180.12C70.8819 183.692 63.9876 186.1 56.778 186.1V188.1C64.4004 188.1 71.7201 185.564 76.845 181.72L75.645 180.12ZM56.778 186.1C51.0494 186.1 46.4969 184.743 43.3601 181.499C40.2151 178.247 38.311 172.911 38.311 164.543H36.311C36.311 173.17 38.2694 179.112 41.9224 182.89C45.5836 186.676 50.7646 188.1 56.778 188.1V186.1ZM38.311 164.543V1.69999H36.311V164.543H38.311ZM37.311 0.699986H1.467V2.69999H37.311V0.699986ZM0.467001 1.69999V164.234H2.467V1.69999H0.467001Z" />
 						</svg>
 					</div>
-
-					<div class="hero__arrow sm-hide"><i class="fal fa-angle-down"></i></div>
 				</div>
+
+				<div class="hero__arrow sm-hide"><i class="fal fa-angle-down"></i></div>
 			</section>
 
 			 <section class="section info" id="info">
 				<div class="container">
-					<div class="tab__wrap js-tabs">
+					<div class="tab js-tabs">
 						<ul class="tab__titles js-line">
 							<li class="tab__title" data-tab="0">
 								<span class="tab__link">Раскрутка</span>
@@ -167,13 +159,21 @@ title: Главная
 							</li>
 						</ul>
 						<div class="tab__contentes">
-							<div class="tab__content" style="display: block;">
+							<div class="tab__content tab__content--amin" style="display: block;">
 								{% include "partials/tab/_tab1.html" %}
 							</div>
-							<div class="tab__content">Содержимое 2</div>
-							<div class="tab__content">Содержимое 3</div>
-							<div class="tab__content">Содержимое 3</div>
-							<div class="tab__content">Содержимое 3</div>
+							<div class="tab__content">
+								{% include "partials/tab/_tab2.html" %}
+							</div>
+							<div class="tab__content">
+								{% include "partials/tab/_tab3.html" %}
+							</div>
+							<div class="tab__content">
+								{% include "partials/tab/_tab4.html" %}
+							</div>
+							<div class="tab__content">
+								{% include "partials/tab/_tab5.html" %}
+							</div>
 						</div>
 						<button class="tab__btn tab__btn--prev xs-only"><i class="fal fa-angle-left"></i></button>
 						<button class="tab__btn tab__btn--next xs-only"><i class="fal fa-angle-right"></i></button>

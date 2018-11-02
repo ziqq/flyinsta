@@ -6,13 +6,17 @@ import './_lib/slick';
 import './_lib/scrollspy';
 import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/modal';
-import Animate from './modules/Animate';
+import sectionAnimate from './modules/Animate';
 
 $(function() {
     $('body').removeClass('loading');
 
-    if($(window).width() > 768) {
-        Animate();
+    if ($(window).width() > 480) {
+        sectionAnimate();
+    }
+
+    if ($(window).height() > 1300) {
+        $('.hero').css('min-height', '100%');
     }
 
     function totalLength() {
@@ -209,7 +213,7 @@ $(function() {
         var destination = $(el).offset().top;
         if ($(window).width() > 768) {
             $('html, body').animate(
-                { scrollTop: destination - 100 + 'px' },
+                { scrollTop: destination - 50 + 'px' },
                 400
             );
         } else {

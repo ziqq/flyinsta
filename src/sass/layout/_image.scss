@@ -1,5 +1,6 @@
 .img-container {
     position: relative;
+    @include nosel;
 
     &__bg,
     &__img {
@@ -60,7 +61,7 @@
         display: none;
     }
 
-    &__list {
+    &__map {
         width: 105%;
         padding-top: 90%;
         background: url('../img/general/hero/vector.svg') 0 95% no-repeat;
@@ -69,18 +70,23 @@
         left: 35px;
         z-index: -2;
 
-        @include respond-to(sm) {
-            padding-top: 100%;
-            background-position: 110% 40%;
-            background-size: contain;
+        @include respond-to(md) {
+            display: none;
+            // padding-top: 100%;
+            // background-position: 110% 40%;
+            // background-size: contain;
         }
-    } //.box-icon-move__list
+    } //.box-icon-move__map
 
     &__way {
         position: absolute;
         top: -30px;
         left: 0;
         z-index: -2;
+
+        @include respond-to(md) {
+            display: none;
+        }
 
         #motionPath {
             opacity: 0;
@@ -91,34 +97,5 @@
     &__icon {
         fill: #fff;
         background-color: #fff;
-    //     display: inline-block;
-    //     width: 70px;
-    //     height: 70px;
-    //     position: absolute;
-    //     background-color: #fff;
-
-    //     &--like {
-    //         top: 4%;
-    //         left: 12px;
-
-    //         @include respond-to(sm) {
-    //             left: -25px;
-    //         }
-    //     }
-
-    //     &--comment {
-    //         top: 15%;
-    //         right: -40px;
-    //     }
-
-    //     &--user {
-    //         bottom: -4%;
-    //         left: 120px;
-
-    //         @include respond-to(sm) {
-    //             bottom: 0%;
-    //             left: 30px;
-    //         }
-    //     }
     } //.box-icon-move__icon
 } //.box-icon-move

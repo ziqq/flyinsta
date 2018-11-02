@@ -1,12 +1,16 @@
 .tab {
 
     &__inner {
-        padding: 60px $gutter 20px;
+        padding: 0 $gutter 20px;
         position: relative;
-        @include flexCenter;
+        display: flex;
+        align-items: flex-start;
+
+        @include respond-to(sm) {
+            padding: 20px 0;
+        }
 
         @include respond-to(xs) {
-            padding: 20px 0;
         }
     } //.tab__inner
 
@@ -19,15 +23,24 @@
         }
     } //.tab__left
 
+    &__right {
+        padding-top: 30px;
+
+        @include respond-to(xs) {
+            padding-top: 0;
+        }
+    }
+
     &__titles {
         max-width: 690px;
-        margin: auto;
+        margin: auto auto 50px;
         border-bottom: 3px solid #e8e8e8;
         position: relative;
         @include flexCenter;
         justify-content: space-between;
 
         @include respond-to(xs) {
+            margin-bottom: 0;
             border-bottom: 0;
         }
 
@@ -107,6 +120,7 @@
 
         @include respond-to(xs) {
             padding: 5px 0 6px;
+            font-size: 18px;
             border-bottom: 0;
         }
     } //.tab__link
@@ -121,10 +135,14 @@
         display: none;
         padding: 15px 30px;
 
-        @include respond-to(xs) {
+        @include respond-to(sm) {
             padding: 10px 0;
         }
     } //.tab__content
+
+    .img-container {
+        height: 465px;
+    }
 } //.tab
 
 .line {
