@@ -15,6 +15,8 @@ $(function() {
         sectionAnimate();
     }
 
+    console.log('---', $(window).height());
+
     if ($(window).height() > 1300) {
         $('.hero').css('min-height', '100%');
     }

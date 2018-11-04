@@ -24,7 +24,7 @@ var settings = {
             width: '768px'
         },
         xs: {
-            width: '425px'
+            width: '480px'
         },
         i8: {
             width: '414px'

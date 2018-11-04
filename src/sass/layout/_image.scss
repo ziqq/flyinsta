@@ -95,7 +95,84 @@
     } //.box-icon-move__way
 
     &__icon {
-        fill: #fff;
+        // display: block;
+        // align-items: center;
+        // justify-content: center;
+        // width: 70px;
+        // height: 70px;
         background-color: #fff;
+        // border: 1px solid $gray--light;
+        // border-radius: 50%;
+        // position: absolute;
+        fill: #fff;
+
+        @include respond-to(md) {
+            display: none;
+        }
+
+        .icon {
+            width: 28px;
+            height: 28px;
+            fill: $gray--light;
+            @include centre;
+        }
+
+        &--user {
+            top: 11px;
+            left: 6px;
+
+            .icon {
+                width: 27px;
+                height: 27px;
+            }
+        } //.box-icon-move--user
+
+        &--like {
+            top: 68px;
+            left: 580px;
+
+            .icon {
+                top: 53%;
+            }
+
+            &.is-animate {
+                animation: like 1s linear 0s normal both;
+            }
+        } //.box-icon-move--like
+
+        &--comment {
+            top: 465px;
+            left: 119px;
+
+            .icon {
+                width: 27px;
+                height: 27px;
+                left: 52%;
+                top: 52%;
+            }
+        } //.box-icon-move--comment
     } //.box-icon-move__icon
 } //.box-icon-move
+
+// @keyframes like {
+
+//     0% {
+//         transform: translate(0);
+//     }
+
+//     25% {
+//         transform: translate(-122px, -80px);
+//     }
+
+//     50% {
+//         transform: translate(-217px, -96px);
+//     }
+
+//     75% {
+//         transform: translate(-415px, -94px);
+//     }
+
+//     to {
+//         transform: translate(-574px, -57px);
+//     }
+// }
