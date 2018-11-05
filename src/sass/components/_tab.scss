@@ -11,6 +11,7 @@
         }
 
         @include respond-to(xs) {
+            padding: 10px 0 20px;
         }
     } //.tab__inner
 
@@ -38,6 +39,10 @@
         position: relative;
         @include flexCenter;
         justify-content: space-between;
+
+        @include respond-to(sm) {
+            margin-bottom: 0;
+        }
 
         @include respond-to(xs) {
             margin-bottom: 0;

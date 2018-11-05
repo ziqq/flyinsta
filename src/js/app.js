@@ -11,15 +11,26 @@ import sectionAnimate from './modules/Animate';
 $(function() {
     $('body').removeClass('loading');
 
-    if ($(window).width() > 480) {
+    if ($(window).width() > 480 && $(window).height() <= 1080) {
         sectionAnimate();
     }
 
-    console.log('---', $(window).height());
-
-    if ($(window).height() > 1300) {
-        $('.hero').css('min-height', '100%');
+    function heroHeight() {
+        if ($(window).height() > 1080) {
+            if ($(window).width() > 1024) {
+                $('.hero').css({
+                    minHeight: 100 + '%'
+                });
+            } else {
+                $('.hero').css({
+                    minHeight: 100 + '%',
+                    paddingTop: 120 + 'px'
+                });
+            }
+        }
     }
+    heroHeight();
+    $(window).resize(heroHeight());
 
     function totalLength() {
         var path = document.querySelector('.len');
@@ -211,23 +222,29 @@ $(function() {
     $('.js-goto').on('click', function(e) {
         e.preventDefault();
 
-        var el = $(this).attr('href');
-        var destination = $(el).offset().top;
-        if ($(window).width() > 768) {
-            $('html, body').animate(
-                { scrollTop: destination - 50 + 'px' },
-                400
-            );
+        let offset;
+        if ($(window).width() > 480) {
+            offset = 50;
         } else {
-            $('html, body').animate(
-                { scrollTop: destination - 120 + 'px' },
-                400
-            );
+            offset = 70;
         }
+        let el = $(this).attr('href');
+        let destination = $(el).offset().top;
+        $('html, body').animate(
+            { scrollTop: destination - offset + 'px' },
+            400
+        );
     });
 
+    let scrollspyOffset;
+    if ($(window).height() <= 1080) {
+        scrollspyOffset = -100;
+    } else {
+        scrollspyOffset = -400;
+    }
+    console.log('---', scrollspyOffset);
     if ($(window).width() >= 480) {
-        $('.js-scrollspy').scrollspy({ offset: -100 });
+        $('.js-scrollspy').scrollspy({ offset: scrollspyOffset });
     }
 
     $('.js-go-top').on('click', function(e) {

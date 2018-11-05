@@ -234,10 +234,6 @@
         padding-top: 210px;
     }
 
-    @media (max-height: 769px) {
-        min-height: 100%;
-    }
-
     @include max-screen(1366) {
         padding-bottom: 0;
     }
@@ -325,10 +321,18 @@
             width: 42%;
         }
 
+        @include respond-to(md) {
+            position: relative;
+            left: 25px;
+            top: -25px;
+        }
+
         @include respond-to(xs) {
             width: 100%;
             padding: 0 10px;
             order: 2;
+            top: auto;
+            left: auto;
         }
     } //.hero__left
 
@@ -448,16 +452,28 @@
         right: 125px;
         bottom: 50px;
 
+        @include respond-to(xs) {
+            padding-left: 30px;
+            font-size: 18px;
+            right: 10px;
+            bottom: 10px;
+        }
+
         &:hover {
             color: #fff;
         }
 
         &::before {
-            content: '';
+            content: '\f1fa';
+            @include fa();
+            font-size: 30px;
             display: block;
-            @include s('mail');
             @include centre('y');
             left: 0;
+
+            @include respond-to(xs) {
+                font-size: 26px;
+            }
         }
 
         &::after {
@@ -472,15 +488,15 @@
             top: auto;
             bottom: -7px;
             left: 40px;
+
+            @include respond-to(xs) {
+                width: calc(100% - 30px);
+                left: 30px;
+            }
         }
 
         span {
             position: relative;
-        }
-
-        @include respond-to(xs) {
-            right: 20px;
-            bottom: 35px;
         }
     } //.hero__link
 
@@ -677,13 +693,18 @@
     } //.info-list__icon
 
     &__text {
+        max-width: 340px;
         font-family: $f-light;
         font-size: 16px;
 
         @include respond-to(sm) {
             font-size: 17px;
         }
-    }
+
+        @include respond-to(xs) {
+            max-width: 100%;
+        }
+    } //.info-block__text
 } //.info-block
 
 .info-text {
@@ -1184,6 +1205,7 @@
         }
 
         @include respond-to(xs) {
+            font-family: $f;
             text-align: center;
             bottom: auto;
             top: 50px;
@@ -1225,8 +1247,8 @@
     padding-top: 100px;
     @include flexColumn;
 
-    @include max-screen(1360) {
-        padding-top: 30px;
+    @include respond-to(n) {
+        padding-top: 50px;
     }
 
     @include respond-to(md) {
