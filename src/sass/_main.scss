@@ -690,6 +690,24 @@
             margin-right: 18px;
             margin-left: 7px;
         }
+
+        &.icon-mail {
+            width: 45px;
+            height: 45px;
+            margin-left: 3px;
+        }
+
+        &.icon-rub {
+            width: 45px;
+            height: 45px;
+            margin-left: 5px;
+        }
+
+        &.icon-cart {
+            width: 47px;
+            height: 47px;
+            margin-left: 3px;
+        }
     } //.info-list__icon
 
     &__text {
@@ -742,9 +760,6 @@
     color: #fff;
     position: relative;
 
-    @include respond-to(md) {
-    }
-
     @include respond-to(xs) {
         padding-bottom: 30px;
     }
@@ -760,7 +775,10 @@
         position: absolute;
         top: -170px;
         right: 0;
-        z-index: 1;
+
+        @include respond-to(md) {
+            width: 895px;
+        }
 
         @include respond-to(sm) {
             display: none;
@@ -1180,7 +1198,7 @@
         content: '';
         display: block;
         width: 100%;
-        height: 333px;
+        height: 350px;
         background-image: url('../img/general/bg/count-bg.png');
         background-size: cover;
         background-repeat: no-repeat;
@@ -1299,7 +1317,7 @@
 
         &:hover {
             @include respond-min(sm) {
-                transform: scale(1.3) !important;
+                transform: scale(1.2) !important;
                 position: relative;
                 z-index: 1;
             }

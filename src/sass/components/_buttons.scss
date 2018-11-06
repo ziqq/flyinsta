@@ -250,7 +250,7 @@
     cursor: pointer;
 
     bottom: 110px;
-    right: -300px;
+    left: -300px;
     z-index: z(fixed);
     @include flexCenter;
     justify-content: center;
@@ -270,7 +270,7 @@
     }
 
     &.is-visible {
-        right: 70px;
+        left: 70px;
 
         &::before {
             opacity: 1;

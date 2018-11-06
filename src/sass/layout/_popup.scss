@@ -166,11 +166,7 @@
         }
 
         &-body {
-            padding: 20px 40px 35px;
-
-            @include respond-to(xs) {
-                padding: 20px;
-            }
+            padding: 10px 20px 20px;
         }
 
         &-title {

@@ -206,9 +206,9 @@ function ainimateVideo(v) {
             { ease: Expo.easeOut, y: 0, zIndex: 1 },
             0.5
         )
-        .to('.bals__item--2', 1, { x: 0 }, '-=1')
+        .to('.bals__item--2', 1, { x: 1, y: 1 }, '-=1')
         .to('.bals__item--3', 1, { x: 50, y: 10 }, '-=1')
-        .to('.video__desc', 0.5, { y: 0, opacity: 1 }, '-=.5')
+        .to('.video__desc', 0.5, { x: 1, y: 1, opacity: 1 }, '-=.5')
         .to('.video__player', 0.8, { scale: 1, opacity: 1 }, '-=1.5')
         .to(
             '.video__play',
@@ -224,7 +224,7 @@ function ainimateVideo(v) {
 }
 
 function ainimateCounter(c) {
-    c.to('.counter-user', 0.8, { y: 0, opacity: 1 }).to(
+    c.to('.counter-user', 0.8, { y: 0, x: '-50%', opacity: 1 }).to(
         '.counter__desc',
         0.8,
         { y: 0, opacity: 1 },

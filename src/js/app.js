@@ -11,7 +11,7 @@ import sectionAnimate from './modules/Animate';
 $(function() {
     $('body').removeClass('loading');
 
-    if ($(window).width() > 480 && $(window).height() <= 1080) {
+    if ($(window).width() > 1024 && $(window).height() <= 1080) {
         sectionAnimate();
     }
 
@@ -236,13 +236,28 @@ $(function() {
         );
     });
 
+    $('.js-go-next').on('click', function(e) {
+        let target = $(this)
+            .closest('section')
+            .next('section')
+            .offset().top;
+
+        let offset;
+        if ($(window).width() > 480) {
+            offset = 50;
+        } else {
+            offset = 70;
+        }
+        $('html, body').animate({ scrollTop: target - offset }, 'slow');
+        e.preventDefault();
+    });
+
     let scrollspyOffset;
     if ($(window).height() <= 1080) {
         scrollspyOffset = -100;
     } else {
         scrollspyOffset = -400;
     }
-    console.log('---', scrollspyOffset);
     if ($(window).width() >= 480) {
         $('.js-scrollspy').scrollspy({ offset: scrollspyOffset });
     }
