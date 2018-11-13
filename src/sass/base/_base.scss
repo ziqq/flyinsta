@@ -16,6 +16,7 @@ body {
     @include smooth-font;
     overflow-x: hidden;
     @include scroll;
+    @include flexColumn;
 
     @include max-screen(1366) {
         font-size: 17px;
@@ -31,6 +32,14 @@ body {
         padding-right: 0 !important;
         overflow: hidden;
     } //body.modal-open
+}
+
+.wrapper {
+    min-height: 100vh;
+}
+
+.main {
+    flex: 1;
 }
 
 .preloader {

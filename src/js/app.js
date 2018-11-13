@@ -32,12 +32,6 @@ $(function() {
     heroHeight();
     $(window).resize(heroHeight());
 
-    function totalLength() {
-        var path = document.querySelector('.len');
-        var len = Math.round(path.getTotalLength());
-    }
-    totalLength();
-
     $('.js-tabs').each(function() {
         let $tab = $(this).find('.tab__title');
         let $content = $(this).find('.tab__content');

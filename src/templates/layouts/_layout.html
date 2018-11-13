@@ -22,6 +22,7 @@
 
 	{#{% include "../partials/assets/_media-tags.html" %}#}
 
+	{% block style %}{% endblock %}
 	<link rel="stylesheet" media="all" href="css/app.css">
 </head>
 <body class="loading">
@@ -33,12 +34,6 @@
 		{% include "partials/_footer.html" %}
 	</div>
 	<!-- end wrapper -->
-
-	<!-- begin windows -->
-	<div class="windows">
-		{% include "partials/_popup.html" %}
-	</div>
-	<!-- end windows -->
 
 	<div class="go-top js-go-top"><i class="fal fa-angle-up"></i></div>
 	<div class="overlay js-overlay"></div>
