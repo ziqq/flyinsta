@@ -27,19 +27,13 @@
 	{% block customstyle %}{% endblock %}
 
 </head>
-<body class="loading">
+<body class="loading" data-app-name="FlyInsta">
 
 	<!-- begin wrapper -->
 	<div class="wrapper {{ wrapperClass }}">
-		{% include "partials/_header.html" %}
 		{% block content %}{% endblock %}
-		{% include "partials/_footer.html" %}
 	</div>
 	<!-- end wrapper -->
-
-	<div class="go-top js-go-top"><i class="fal fa-angle-up"></i></div>
-	<div class="overlay js-overlay"></div>
-	<div class="preloader"></div>
 
 	<!-- begin scripts -->
 	{% block scripts %}{% endblock %}

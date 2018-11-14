@@ -1,0 +1,196 @@
+@import 'helpers/all';
+@import 'base/fonts';
+
+
+$width: 560px;
+
+html {
+    height: 100%;
+}
+
+body {
+    min-width: 320px;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    color: $color-text;
+    line-height: $base-line-height;
+    background-color: $base-bg-color;
+    position: relative;
+    scroll-behavior: smooth;
+    @include smooth-font;
+    overflow-x: hidden;
+    @include scroll;
+    @include flexColumn;
+
+    @include max-screen(1366) {
+        font-size: 17px;
+    }
+}
+
+input,
+textarea,
+select {
+    @extend %styleInput;
+}
+
+select {
+    width: 100%;
+}
+
+.panel {
+    border: 0;
+    border-radius: $border-radius;
+    box-shadow: none;
+}
+
+.panel-body {
+    margin-top: -10px;
+    padding: 40px 60px;
+    border: 1px solid #c4c4c4;
+    border-top: 0;
+    border-radius: 0 0 $border-radius * 2.5 $border-radius * 2.5;
+
+    &.blue-panel {
+
+        p {
+            margin-bottom: 20px;
+            font-family: $f-light;
+            font-size: 14px;
+            text-align: center;
+
+            color: #567486;
+        }
+    }
+}
+
+.panel-title {
+    height: 85px;
+    line-height: 85px;
+    font-family: $f2;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.panel-primary {
+    max-width: $width;
+    margin: auto;
+
+    & > .panel-heading {
+        height: 95px;
+        padding: 0;
+        background-color: transparent;
+        border-color: transparent;
+        border-radius: $border-radius * 2.5 $border-radius * 2.5 0 0;
+        background-image: url('../img/general/bg/form-header-bg.png');
+        @include cover;
+    }
+}
+
+label {
+    color: $gray;
+    font-family: $f;
+    font-size: 16px;
+    font-weight: 400;
+
+    &[for='signupform-acceptrules'] {
+        margin-bottom: 20px;
+        font-size: 13px;
+
+        a {
+            font-size: 13px;
+        }
+    }
+}
+
+a {
+    font-family: $f-light;
+    font-size: 15px;
+    color: #567486;
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+        color: darken(#567486, 15%);
+    }
+}
+
+b {
+    font-size: 15px;
+    font-family: $f;
+    font-weight: 400;
+}
+
+.form-control {
+    padding-left: 0;
+    border: 0;
+    border-bottom: 2px solid rgba(86, 116, 134, 0.1);
+    border-radius: 0;
+    box-shadow: none;
+
+    @include placeholder {
+        font-family: $f;
+        color: rgba(86, 116, 134, 0.6);
+    }
+
+    &:focus {
+        border-bottom: 2px solid rgba(86, 116, 134, 0.5);
+        box-shadow: none;
+    }
+}
+
+.form-group {
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &.field-passwordresetrequestform-email {
+        margin-bottom: 30px;
+    }
+}
+
+.btn {
+    display: block;
+    min-width: 250px;
+    margin: auto;
+}
+
+.fa {
+    font-weight: 300;
+    color: rgba(86, 116, 134, 0.6);
+}
+
+.g-recaptcha {
+
+    & > div {
+        width: 100% !important;
+    }
+}
+
+.field-signupform-verifycode {
+    margin-top: -20px;
+
+    .col-xs-12 {
+        text-align: center;
+        padding: 0 !important;
+        border: 0 !important;
+        background-color: transparent !important;
+    }
+}
+
+.cbx-active:focus,
+.cbx-active:hover {
+    box-shadow: none;
+    border-color: $color-border--light;
+
+    &:hover {
+        border: 1px solid $color-border--light;
+    }
+}
+
+.input-group {
+
+    .fa {
+        display: none;
+    }
+}

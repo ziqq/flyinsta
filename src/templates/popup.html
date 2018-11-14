@@ -1,11 +1,15 @@
 ---
-	title: Попак окна
+	title: Попап окна
 ---
 
-{% extends "layouts/_layout.html" %}
+{% extends "layouts/_custom.html" %}
 
 {% block style %}
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/todc-bootstrap/3.3.7-3.3.13/css/bootstrap.css">
+	<link rel="stylesheet" href="css/custom.css">
+{% endblock %}
+{% block customstyle %}
+	<link rel="stylesheet" href="css/custom.css">
 {% endblock %}
 
 {% block content %}
@@ -15,54 +19,313 @@
 		margin-top: 0;
 	}
 	.main {
-		padding-top: 93px;
+		padding: 50px 0;
 	}
 </style>
 
 <!-- begin home -->
 <main class="main">
-
-	<div class="container mt-30 mb-30">
-
+	<div class="container-fluid mt-30 mb-30">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<h2 class="panel-title">FlyInsta Логин</h2>
+				<h2 class="panel-title">FlyInsta логин</h2>
 			</div>
 			<div class="panel-body">
-
 				<form id="login-form" action="/login" method="post">
-					<input type="hidden" name="_csrf" value="28SKm1rd2DfO8onaCLyQk_AgzwWen1PRUFsivV9oR829oM_xPPCSA6uG_oBCyfP5phKKTfnnOJYcME7VNi0IlA==">
+					<input
+						type="hidden"
+						name="_csrf"
+						value="28SKm1rd2DfO8onaCLyQk_AgzwWen1PRUFsivV9oR829oM_xPPCSA6uG_oBCyfP5phKKTfnnOJYcME7VNi0IlA=="
+					/>
 					<div class="form-group field-loginform-email required">
-						<label class="control-label" for="loginform-email">Логин (email)</label>
-						<input type="email" id="loginform-email" class="form-control" name="LoginForm[email]" placeholder="Введите email" aria-required="true">
+						<label class="control-label" for="loginform-email"
+							>Логин (email)</label
+						>
+						<input
+							type="email"
+							id="loginform-email"
+							class="form-control"
+							name="LoginForm[email]"
+							placeholder="Введите email"
+							aria-required="true"
+						/>
 
 						<p class="help-block help-block-error"></p>
 					</div>
 					<div class="form-group field-loginform-password required">
-						<label class="control-label" for="loginform-password">Пароль</label>
-						<input type="password" id="loginform-password" class="form-control" name="LoginForm[password]" placeholder="Введите пароль" aria-required="true">
+						<label class="control-label" for="loginform-password"
+							>Пароль</label
+						>
+						<input
+							type="password"
+							id="loginform-password"
+							class="form-control"
+							name="LoginForm[password]"
+							placeholder="Введите пароль"
+							aria-required="true"
+						/>
 
 						<p class="help-block help-block-error"></p>
 					</div>
-					<div style="color:#999;margin:1em 0">
-						<a href="/site/request-password-reset">Забыли пароль?</a>
-						<br>
-
+					<div style="color:#999;margin:1.4em 0 1.7em">
+						<a href="/site/request-password-reset"
+							>Забыли пароль?</a
+						>
+						<br />
 
 						<b style="color: #555555">Нет аккаунта? </b>
 						<a href="/signup">Регистрация</a>
 					</div>
 
 					<div class="form-group">
-						<button type="submit" class="btn btn-primary" name="login-button">Логин</button>
+						<button
+							type="submit"
+							class="btn btn-primary"
+							name="login-button"
+						>
+							Войти
+						</button>
 					</div>
-
 				</form>
 			</div>
 		</div>
-
 	</div>
 
+	<div class="container-fluid mt-30 mb-30">
+		<div class="panel panel-primary mt-30 mb-30">
+			<div class="panel-heading">
+				<h2 class="panel-title text-center">FlyInsta Регистрация</h2>
+			</div>
+			<div class="panel-body signup-form">
+				<form id="form-signup" action="/signup" method="post">
+					<input
+						type="hidden"
+						name="_csrf"
+						value="mqyQoXnU_muZi7zYOexPeyqbkGEbKT3_1eBfTepCd9L8yNXLH_m0X_z_y4JzmSwRfKnVKXxRVriZizMlgwc4iw=="
+					/>
+					<div class="form-group field-signupform-name required">
+						<label class="control-label" for="signupform-name"
+							>Ваше имя</label
+						>
+						<div
+							class="input-group has-feedback has-feedback-left"
+							style="width: 100%;"
+						>
+							<input
+								type="text"
+								id="signupform-name"
+								class="form-control"
+								name="SignupForm[name]"
+								placeholder="Введите имя"
+								aria-required="true"
+							/><span
+								class="fa fa-user fa-fw form-control-feedback"
+							></span>
+						</div>
+						<p class="help-block help-block-error"></p>
+					</div>
+
+					<div class="form-group field-signupform-email required">
+						<label class="control-label" for="signupform-email"
+							>Логин (email)</label
+						>
+						<div
+							class="input-group has-feedback has-feedback-left"
+							style="width: 100%;"
+						>
+							<input
+								type="text"
+								id="signupform-email"
+								class="form-control"
+								name="SignupForm[email]"
+								placeholder="Введите email"
+								aria-required="true"
+							/><span
+								class="fa fa-envelope-o fa-fw form-control-feedback"
+							></span>
+						</div>
+						<p class="help-block help-block-error"></p>
+					</div>
+
+					<input
+						type="hidden"
+						id="signupform-phone"
+						name="SignupForm[phone]"
+						value="NULL"
+					/>
+
+					<div class="form-group field-signupform-password required">
+						<div
+							class="input-group has-feedback has-feedback-left"
+							style="width: 100%;"
+						>
+							<input
+								type="password"
+								id="signupform-password"
+								class="form-control"
+								name="SignupForm[password]"
+								placeholder="Введите пароль"
+								aria-required="true"
+							/><span
+								class="fa fa-key fa-fw form-control-feedback"
+							></span>
+						</div>
+						<p class="help-block help-block-error"></p>
+					</div>
+
+					<div
+						class="form-group field-signupform-passwordrepeat required"
+					>
+						<div
+							class="input-group has-feedback has-feedback-left"
+							style="width: 100%;"
+						>
+							<input
+								type="password"
+								id="signupform-passwordrepeat"
+								class="form-control"
+								name="SignupForm[passwordRepeat]"
+								placeholder="Введите пароль ещё раз"
+								aria-required="true"
+							/><span
+								class="fa fa-key fa-fw form-control-feedback"
+							></span>
+						</div>
+						<p class="help-block help-block-error"></p>
+					</div>
+
+					<div class="form-group field-signupform-verifycode">
+						<label
+							class="control-label"
+							for="signupform-verifycode"
+						></label>
+						<input
+							type="hidden"
+							id="signupform-verifycode"
+							name="SignupForm[verifyCode]"
+						/>
+						<div class="row">
+							<div
+								class="col-xs-12"
+								style="background-color: #e5e5e5; padding-top: 10px; padding-bottom: 10px; border-top: solid 1px darkgray; border-bottom: solid 1px darkgray;"
+							>
+								<div>
+									<div
+										class="g-recaptcha"
+										data-sitekey="6LdG0ykTAAAAAHZY4nHkVk3j2Pck0NYXMqVPTM25"
+										data-callback="recaptchaCallback"
+										data-expired-callback="recaptchaExpiredCallback"
+									>
+										<div
+											style="width: 304px; height: 78px;"
+										>
+											<div>
+												<iframe
+													src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LdG0ykTAAAAAHZY4nHkVk3j2Pck0NYXMqVPTM25&amp;co=aHR0cHM6Ly9hcHAuZmx5aW5zdGEucnU6NDQz&amp;hl=ru&amp;v=v1541614764654&amp;size=normal&amp;cb=eflqj8ze590l"
+													width="304"
+													height="78"
+													role="presentation"
+													name="a-gcumuuwgny7h"
+													frameborder="0"
+													scrolling="no"
+													sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"
+												></iframe>
+											</div>
+											<textarea
+												id="g-recaptcha-response"
+												name="g-recaptcha-response"
+												class="g-recaptcha-response"
+												style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"
+											></textarea>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<p class="help-block help-block-error"></p>
+					</div>
+					<input
+						type="hidden"
+						id="user-timezone-input"
+						name="SignupForm[timezone]"
+						value="14400"
+					/>
+					<div class="form-group field-signupform-acceptrules">
+						<div class="pull-left">
+							<div class="cbx-container">
+								<div
+									class="cbx cbx-sm cbx-active"
+									tabindex="1000"
+								>
+									<span class="cbx-icon"> </span>
+								</div>
+								<input
+									type="text"
+									id="signupform-acceptrules"
+									class="form-control promo-checkbox"
+									name="SignupForm[acceptRules]"
+									value="0"
+									style="display: none;"
+								/>
+							</div>
+						</div>
+						<div style="margin-left: 35px">
+							<label
+								class="control-label"
+								for="signupform-acceptrules"
+								>Я принимаю
+								<a href="/agreement">Условия использования</a> и
+								соглашаюсь с
+								<a href="/privacy-policy"
+									>политикой конфиденциальности</a
+								>
+								FlyInsta</label
+							>
+							<p class="help-block help-block-error"></p>
+						</div>
+					</div>
+					<div
+						class="form-group"
+						style="margin-bottom: 0; margin-top: -10px;"
+					>
+						<button
+							type="submit"
+							class="btn btn-lg btn-success btn-signup"
+							id="signup-button-id"
+							name="signup-button"
+						>
+							Регистрация
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid mt-30 mb-30">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h2 class="panel-title">Восстановление Пароля</h2>
+			</div>
+			<div class="panel-body blue-panel">
+				<p>Введите ваш email. Мы выслали ссылку для восстановления пароля на ваш email.</p>
+
+				<form id="request-password-reset-form" action="/site/request-password-reset" method="post">
+					<input type="hidden" name="_csrf" value="oUQJaIZ-US3Mmk5vPud2vSYXyFk1CW1f1Ux-s5iRKlvHIEwC4FMbGanuOTV0khXXcCWNEVJxBhiZJxLb8dRlAg==">
+					<div class="form-group field-passwordresetrequestform-email required">
+						<label class="control-label" for="passwordresetrequestform-email">Email</label>
+						<input type="text" id="passwordresetrequestform-email" class="form-control" name="PasswordResetRequestForm[email]" placeholder="Введите email" aria-required="true">
+
+						<p class="help-block help-block-error"></p>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary">Сбросить пароль</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 </main>
 <!-- end home -->
 
