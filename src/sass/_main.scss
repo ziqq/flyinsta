@@ -315,7 +315,6 @@
 
     &__left {
         width: 50%;
-        max-width: 550px;
 
         @include respond-to(md) {
             width: 42%;

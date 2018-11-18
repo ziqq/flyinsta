@@ -1,7 +1,6 @@
 @import 'helpers/all';
 @import 'base/fonts';
 
-
 $width: 560px;
 
 html {
@@ -27,6 +26,13 @@ body {
     }
 }
 
+.wrap {
+    height: auto;
+    margin: 0;
+    padding: 0 0 60px;
+    min-height: 100%;
+}
+
 input,
 textarea,
 select {
@@ -36,6 +42,74 @@ select {
 select {
     width: 100%;
 }
+
+.btn {
+    display: block;
+    min-width: 250px;
+    margin: auto;
+    padding: 10px 45px;
+    font-family: $f;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 0.3px;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    background: linear-gradient(80.23deg, $color-main 1.74%, $color-third 100%);
+    box-shadow: 0 5px 10px rgba(196, 80, 146, 0.5);
+    border-radius: 20px 5px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: all 0.4s ease-in-out;
+    background-position: 0 -30px;
+
+    @include respond-to(xs) {
+        min-width: 200px;
+        padding: 12px 45px;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 100%;
+        z-index: -1;
+        transition: opacity 0.45s;
+    }
+
+    &:hover {
+        color: #fff;
+
+        &::before {
+            opacity: 1;
+            background: linear-gradient(
+                80.23deg,
+                #aa56d8 1.74%,
+                $color-third 100%
+            );
+        }
+    }
+
+    &:focus,
+    &:active {
+
+        &::before {
+            opacity: 1;
+            background: linear-gradient(
+                81.02deg,
+                #aa56d8 1.74%,
+                $color-third 100%
+            );
+        }
+    }
+} //.btn
 
 .panel {
     border: 0;
@@ -49,6 +123,10 @@ select {
     border: 1px solid #c4c4c4;
     border-top: 0;
     border-radius: 0 0 $border-radius * 2.5 $border-radius * 2.5;
+
+    @include respond-to(xs) {
+        padding: 20px 30px;
+    }
 
     &.blue-panel {
 
@@ -69,6 +147,11 @@ select {
     font-family: $f2;
     font-weight: 600;
     font-size: 25px;
+    text-align: center;
+
+    @include respond-to(xs) {
+        font-size: 23px;
+    }
 }
 
 .panel-primary {
@@ -81,7 +164,7 @@ select {
         background-color: transparent;
         border-color: transparent;
         border-radius: $border-radius * 2.5 $border-radius * 2.5 0 0;
-        background-image: url('../img/general/bg/form-header-bg.png');
+        background-image: url('https://flyinsta.ru/img/general/bg/form-header-bg.png');
         @include cover;
     }
 }
@@ -138,6 +221,13 @@ b {
     }
 }
 
+.has-error .form-control {
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
 .form-group {
 
     &:last-child {
@@ -149,12 +239,6 @@ b {
     }
 }
 
-.btn {
-    display: block;
-    min-width: 250px;
-    margin: auto;
-}
-
 .fa {
     font-weight: 300;
     color: rgba(86, 116, 134, 0.6);
@@ -164,6 +248,12 @@ b {
 
     & > div {
         width: 100% !important;
+    }
+}
+
+.rc-anchor-normal {
+    @include respond-to(i5) {
+        width: 257px;
     }
 }
 

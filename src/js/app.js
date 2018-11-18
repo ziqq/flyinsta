@@ -1,12 +1,4 @@
-import './_lib/jquery-migrate.min';
-import './assets/svg-sprite';
-import svg4everybody from 'svg4everybody';
-import fancyBox from '@fancyapps/fancybox';
-import './_lib/slick';
-import './_lib/scrollspy';
-import 'bootstrap/js/dist/util';
-import 'bootstrap/js/dist/modal';
-import sectionAnimate from './modules/Animate';
+//=include modules/Animate.js
 
 $(function() {
     $('body').removeClass('loading');

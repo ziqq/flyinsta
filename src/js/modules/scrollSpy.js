@@ -1,4 +1,4 @@
-export default function scrollSpy() {
+function scrollSpy() {
     // Cache selectors
     var lastId,
         topMenu = $('.js-scrollspy'),

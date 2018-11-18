@@ -1,5 +1,3 @@
-import { TimelineMax } from 'gsap';
-
 function sectionAnimate() {
     animateHero();
 
@@ -251,4 +249,3 @@ function ainimatePrice(p) {
             }
         });
 }
-export default sectionAnimate;

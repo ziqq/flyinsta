@@ -6,8 +6,8 @@ gulp.task('watch', [
     'sprite:svg:watch',
     'sprite:png:watch',
     'nunjucks:watch',
-    // 'js:watch',
-    'webpack:watch',
+    'js:watch',
+    // 'webpack:watch',
     'list-pages:watch',
     'sass:watch'
 ]);
